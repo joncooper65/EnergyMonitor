@@ -33,8 +33,8 @@ A lot of things I've forgotten here - will fill in blanks!  Finishes with a cmak
 
 - install cmake to allow compilation, this might help https://www.raspberrypi.org/forums/viewtopic.php?f=66&t=62344
 - probably need to do:
--- sudo apt-get update && sudo apt-get upgrade
--- sudo apt-get install cmake
+  - sudo apt-get update && sudo apt-get upgrade
+  - sudo apt-get install cmake
 -------------
 
 - cd examples_linux/
