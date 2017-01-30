@@ -1,6 +1,6 @@
 
 /*This is a copy of the raspberry pi code I managed to get working with the arduino code also in this project.  
-It is the /linux_examples/gettingstarted.cpp code from , with a couple of paramater changes - i think, can't remember now - you'll have to check!
+It is the /linux_examples/gettingstarted.cpp code from https://github.com/TMRh20/RF24.git, with a couple of paramater changes - i think, can't remember now - you'll have to check!
 
 /*
 * Getting Started example sketch for nRF24L01+ radios
