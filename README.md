@@ -38,7 +38,7 @@ A lot of things I've forgotten here - will fill in blanks!  Finishes with a cmak
 -------------
 
 - cd examples_linux/
-- cmake
+- make
 - sudo ./gettingstarted
 At the command prompt choose either 0: pong_back (ie listening) or 1: ping_out
 
