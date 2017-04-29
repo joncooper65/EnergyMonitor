@@ -28,10 +28,51 @@ TMRh20 2014 - Updated to work with optimized RF24 Arduino library
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <ctime>
 #include <unistd.h>
 #include <RF24/RF24.h>
 
 using namespace std;
+
+
+//Get the current date time as a string
+string getDateTime()
+{
+  time_t now = time(0);
+  tm *ltm = localtime(&now);
+  std::ostringstream toreturn;
+  toreturn << (1900 + ltm->tm_year) << "-";
+  toreturn << (1 + ltm->tm_mon) << "-";
+  toreturn << (ltm->tm_mday) << "T";
+  toreturn << (1 + ltm->tm_hour) << ":";
+  toreturn << (1 + ltm->tm_min) << ":";
+  toreturn << (1 + ltm->tm_sec);
+  return toreturn.str();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //
 // Hardware configuration
 // Configure the appropriate pins for your connections
@@ -208,8 +249,11 @@ int main(int argc, char** argv){
 				printf("Got payload(%d) %lu...\n",sizeof(unsigned long), payload);
 
 				// Write to csv
+        std::ostringstream payload_stream;
+        payload_stream << payload;
 				ofstream csvoutput(outfile.c_str(), ios::app);
-				csvoutput << payload << endl;
+				std::string towrite = std::string(getDateTime()) + "," + payload_stream.str();
+				csvoutput << towrite << endl;
 				csvoutput.close();
 
 				delay(925); //Delay after payload responded to, minimize RPi CPU time
